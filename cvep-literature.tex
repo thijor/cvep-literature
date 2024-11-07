@@ -1,0 +1,438 @@
+\documentclass[a4paper,landscape]{article}
+
+\usepackage[a4paper,margin=0.8in,landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=blue,
+	urlcolor=blue,
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\today}
+\lhead{Code-modulated evoked potential (c-EP) brain-computer interfacing (BCI)}
+\lfoot{Jordy Thielen}
+\rfoot{Page \thepage}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\usepackage{glossaries}
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}} 
+\makeglossaries
+\newacronym{als}{ALS}{amyotrophic lateral sclerosis}
+\newacronym{apa}{APA}{almost perfect auto-correlation}
+\newacronym{assr}{ASSR}{auditory steady-state response}
+\newacronym{bci}{BCI}{brain computer interfacing}
+\newacronym{cca}{CCA}{canonical correlation analysis}
+\newacronym{ccep}{CCEP}{contrico-cortical evoked potential}
+\newacronym{clad}{CLAD}{continuous loop averaging deconvolution}
+\newacronym{cnn}{CNN}{convolutional neural network}
+\newacronym{csp}{CSP}{common spatial patterns}
+\newacronym{ctvep}{CTVEP}{chromatic transient visual evoked potential}
+\newacronym{caep}{c-AEP}{code-modulated auditory evoked potential}
+\newacronym{csep}{c-SEP}{code-modulated somatosensory evoked potential}
+\newacronym{cvep}{c-VEP}{code-modulated visual evoked potential}
+\newacronym{dibs}{DIBS}{discrete interval binary sequence}
+\newacronym{eeg}{EEG}{electroencephalography}
+\newacronym{ern}{ERN}{error related negativity}
+\newacronym{erp}{ERP}{event related potential}
+\newacronym{fbcca}{FBCCA}{filterbank canonical correlation analysis}
+\newacronym{ica}{ICA}{independent component analysis}
+\newacronym{fbtrca}{FBTRCA}{filterbank task related component analysis}
+\newacronym{lda}{LDA}{linear discriminant analysis}
+\newacronym{lstm}{LSTM}{long short term memory}
+\newacronym{mlp}{MLP}{multilayer perceptron}
+\newacronym{nrbs}{NRBS}{narrow-band random sequences}
+\newacronym{ocsvm}{OCSVM}{one class support vector machine}
+\newacronym{pac}{PAC}{phase to amplitude coupling}
+\newacronym{pca}{PCA}{principal component analysis}
+\newacronym{qssvep}{QSSVEP}{quasi steady-state visual evoked potential}
+\newacronym{rda}{RDA}{regularized discriminant analysis}
+\newacronym{slda}{sLDA}{shrinkage linear discriminant analysis}
+\newacronym{sop}{SOP}{superposition optimized pulse}
+\newacronym{ssmvep}{SSMVEP}{steady state motion visual evoked potential}
+\newacronym{ssvep}{SSVEP}{steady state visual evoked potential}
+\newacronym{svm}{SVM}{support vector machine}
+\newacronym{tdca}{TDCA}{task discriminative component analysis}
+\newacronym{tfo}{TFO}{time-factor optimum}
+\newacronym{tmsep}{TMSEP}{transcranial magnetic stimulation evoked potential}
+\newacronym{trca}{TRCA}{task related component analysis}
+\newacronym{umm}{UMM}{unsupervised mean difference maximization}
+\newacronym{vep}{VEP}{visual evoked potential}
+\newacronym{6fo}{6FO}{6 factor optimum}
+
+\usepackage{apacite}
+
+
+\begin{document}
+
+	
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2024} & & & & \\ 
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\ 
+		\midrule
+		\citeauthor{canturk2024} & proceedings & m-sequence & \acrshort{cca} & Language model (ChatGPT) \\
+		\citeauthor{castillos2024dataset} & dataset & burst codes & & Grating stimuli \\
+		\citeauthor{dehais2024} & preprint & burst codes & \acrshort{cnn} & Grating stimuli, dry \acrshort{eeg} \\
+		\citeauthor{fodor2024} & article & m-sequence & \acrshort{cca} & Classification certainty feedback \\
+		\citeauthor{lai2024} & proceedings & \acrshort{dibs} & \acrfull{fbtrca}, \acrshort{lstm} & Asynchronous \\
+		\citeauthor{martinez2024} & proceedings & non-binary m-sequence & \acrshort{cca} & Learning curve \\
+		\citeauthor{miao2024} & article & white noise & \acrshort{tdca}, linear modeling, transfer learning & Minimal calibration, subject-to-subject transfer \\
+		\citeauthor{narayanan2024} & proceedings & modulated Gold codes & \acrshort{cca} & Gaze-independent, covert attention \\
+		\citeauthor{scheppink2024} & proceedings & modulated Gold codes & \acrshort{cca} & Auditory, \acrshort{caep} \\
+		\citeauthor{shi2024} & article & white-noise & \acrshort{tdca} & Maximum information rate \\
+		\citeauthor{sun2024} & article & m-sequence & \acrshort{tdca} & Small stimuli (0.5, 1, 2, 3 visual degrees) \\
+		\citeauthor{thielen2024} & proceeding & modulated Gold codes & reconvolution, \acrshort{cca}, \acrshort{umm} & Calibration-free \\
+		\citeauthor{thielen2024dataset} & dataset & modulated Gold codes & & \\
+		\citeauthor{velut2024} & proceedings & burst codes & \acrshort{cnn}, SPDNet, transfer learning & Subject-to-subject transfer \\
+		\citeauthor{zheng2024a} & article & \acrshort{nrbs} & \acrshort{fbcca} & Calibration-free, \acrshort{cvep} versus \acrshort{ssvep} \\
+		\citeauthor{zheng2024b} & dataset & \acrshort{nrbs} & & \acrshort{cvep} versus \acrshort{ssvep} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2023} & & & & \\ 
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{ahmadi2023} & preprint & modulated Gold codes & \acrshort{cca} & Bayesian dynamic stopping \\
+		\citeauthor{castillos2023} & article & m-sequence, burst codes & \acrshort{cnn} & \\
+		\citeauthor{castillos2023dataset} & dataset & m-sequence, burst codes & & \\
+		\citeauthor{darmet2023} & proceedings & m-sequence & \acrshort{trca}, EEG2Code, \acrshort{cnn} & \\
+		\citeauthor{fernandez2023} & article & m-sequence & \acrshort{cca} & Eyestrain spatial frequency \\
+		\citeauthor{henke2023} & proceedings & m-sequence & \acrshort{cca} & Background music \\
+		\citeauthor{huang2023} & preprint & white noise & \acrshort{trca} & Visual tracking \\
+		\citeauthor{lai2023} & proceedings & \acrshort{dibs} & \acrshort{fbtrca}, \acrshort{lstm} & fatigue \\
+		\citeauthor{martinez2023a} & article & m-sequence, non-binary m-sequences & \acrshort{cca} & Eyestrain, fatigue \\
+		\citeauthor{martinez2023b} & proceedings & non-binary m-sequence & \acrshort{cca} & Dynamic stopping \\
+		\citeauthor{moreno2023} & article & m-sequence & \acrshort{cca} & Games \\
+		\citeauthor{santamaria2023} & proceedings & non-binary m-sequence, & EEG-inception & \\
+		\citeauthor{thielen2023a} & proceedings & m-sequence, \acrshort{apa} sequence, Gold codes, Golay sequence, de Bruijn sequence & reconvolution, \acrshort{cca} & Simulated \acrshort{eeg} \\
+		\citeauthor{thielen2023b} & proceedings & m-sequence, Gold codes, Golay sequence, de Bruijn sequence, modulated codes & reconvolution, \acrshort{cca} & Empirical \acrshort{eeg} \\
+		\citeauthor{thielen2023dataset} & dataset & modulated Gold codes & & \\
+		\citeauthor{volosyak2023} & proceedings & m-sequence & \acrshort{cca} & Gender \\
+		\citeauthor{wolf2023} & article & & & VEPdgets, Dry \acrshort{eeg} \\
+		\citeauthor{xu2023} & article & m-sequence & \acrshort{trca} & \acrshort{cvep} versus \acrshort{ssvep} \\
+		\bottomrule
+	\end{tabular}
+\end{table}	
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2022} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{dehais2022} & article & & & Dry \acrshort{eeg}, flight simulator, active and passive BCI \\
+		\citeauthor{stawicki2022} & article & m-sequence & transfer learning & Session-to-session transfer \\
+		\citeauthor{sun2022} & article & shifted Gold code & \acrshort{fbtrca} & 120 targets \\
+		\citeauthor{ying2022} & article & m-sequence & Riemannian, transfer learning & Subject-to-subject transfer \\
+		\citeauthor{zarei2022a} & article & m-sequence & spatiotemporal beamformer & \\
+		\citeauthor{zarei2022b} & article & m-sequence & spatiotemporal beamformer & Improved covariance estimator \\
+		\citeauthor{zheng2022} & article & Gold codes & \acrshort{trca} & Brain-switch \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2021} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{kaya2021} & article & quasi steady-state & \acrshort{clad} & \\
+		\citeauthor{martinez2021} & article & & & Review \acrshort{cvep} \\
+		\citeauthor{thielen2021} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Zero-training \\
+		\citeauthor{torres2021} & article & \acrshort{apa} sequence, de Bruijn sequence, Golay sequence, m-sequence, Gold code, Kasami sequence & \acrshort{cca}, \acrshort{ica}, \acrshort{pca}, \acrshort{mlp}  & Synthetic \acrshort{eeg} \\
+		\citeauthor{verbaarschot2021} & article & modulated Gold codes & \acrshort{cca} & \acrshort{als} versus healthy participants \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2020} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{behboodi2020} & article & m-sequence, \acrshort{tfo}, \acrshort{6fo} & \acrshort{cca} & \\
+		\citeauthor{gembler2020a} & article & m-sequence, quintary m-sequence & \acrshort{fbcca} & Presentation rate (60, 120, 240), comfort \\
+		\citeauthor{gembler2020b} & article & m-sequence & \acrshort{cca} & Asynchronous, language model \\
+		\citeauthor{gembler2020c} & dissertation & & & \acrshort{cvep} \\
+		\citeauthor{gembler2020d} & proceedings & m-sequence & \acrshort{fbcca} & Asynchronous, multi-session \\
+		\citeauthor{huang2020} & article & m-sequence & transfer-learning & Subject-to-subject transfer \\ 
+		\citeauthor{volosyak2020} & article & m-sequence & \acrshort{cca} & \acrshort{ssvep}, \acrshort{ssmvep}, \acrshort{cvep}, \acrshort{bci} illiteracy \\
+		\citeauthor{shirzhiyan2020} & article & periodic, quasi-periodic, chaotic codes & \acrshort{cca} & Fatigue \\
+		\citeauthor{turi2020} & article & m-sequence & \acrshort{cca} &  Auto-calibration, language model, zero training \\
+		\citeauthor{yasinzai2020} & article & m-sequence, random sequence, \acrshort{sop} sequences & \acrshort{cca} & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2019} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{ahmadi2019dataset1} & dataset & modulated Gold codes & & \\
+		\citeauthor{ahmadi2019dataset2} & dataset & modulated Gold codes & & \\
+		\citeauthor{ahmadi2019} & article & modulated Gold codes & \acrshort{cca} & Low channel count \\
+		\citeauthor{basaklar2019} & article & m-sequence & \acrshort{cca} & Presentation rate (60, 120, 240 Hz) \\
+		\citeauthor{borhanazad2019} & proceedings & modulated Gold codes & \acrshort{cca} & Presentation rate (40, 60, 90, 120 Hz) \\
+		\citeauthor{desain2019} & patent & modulated Gold codes & \acrshort{cca} & \\
+		\citeauthor{gembler2019a} & article & m-sequence & \acrshort{cca} & Language model \\
+		\citeauthor{gembler2019b} & proceedings & m-sequence & \acrshort{fbcca} & Presentation rate (30, 60, 120 Hz), age (young, elderly) \\
+		\citeauthor{gembler2019c} & article & m-sequence & \acrshort{fbcca} & Language model, dynamic stopping \\
+		\citeauthor{gembler2019d} & proceedings & m-sequence & \acrshort{fbcca} & Language model, dynamic stopping \\
+		\citeauthor{grigoryan2019} & article & m-sequence & \acrshort{cca} & Presentation rate (30, 60, 120 Hz) \\
+		\citeauthor{kadiouglu2019} & article & m-sequence & Maximum likelihood & Color (green-red), fusion of \acrshort{cvep} and eye tracker \\
+		\citeauthor{kaya2019a} & proceedings & quasi steady-state & \acrshort{clad} & \acrshort{qssvep} \\
+		\citeauthor{kaya2019b} & article & quasi steady-state & \acrshort{clad} & \acrshort{qssvep} \\
+		\citeauthor{kaya2019c} & dissertation & & & \acrshort{qssvep} \\
+		\citeauthor{luo2019} & proceedings & m-sequence & \acrshort{lda}, transfer learning & Subject-to-subject transfer \\
+		\citeauthor{matsuno2019} & proceedings & & & frequency-hopping \acrshort{vep} \\
+		\citeauthor{nagel2019a} & article & optimized random sequences & EEG2Code & Asynchronous, non-control state \\
+		\citeauthor{nagel2019b} & article & random sequences & EEG2Code & \\
+		\citeauthor{nagel2019c} & dissertation & & & \acrshort{cvep} \\
+		\citeauthor{peng2019} & proceedings & m-sequence & \acrshort{slda} & For psychological experiments (button presses without behavior) \\
+		\citeauthor{shirzhiyan2019} & article & m-sequence, chaotic codes & \acrshort{cca}, spatiotemporal beamforming & Fatigue \\
+		\citeauthor{turi2019} & article & m-sequence & & Static stopping number of cycles \\
+		\citeauthor{zheng2019} & proceedings & Gold codes & \acrshort{trca} & Brain switch \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2018} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{basaklar2018} & proceedings & m-sequence & & Presentation rate (60, 120, 240 Hz) \\
+		\citeauthor{dimitriadis2018} & article & m-sequence & \acrshort{svm} & \acrshort{pac}, healthy and patients \\
+		\citeauthor{gembler2018a} & proceedings & m-sequence & \acrshort{cca} & Presentation rate (60, 120, 200 Hz) \\
+		\citeauthor{gembler2018b} & proceedings & m-sequence & \acrshort{cca} & Language model \\
+		\citeauthor{liu2018} & article & Golay sequence, \acrshort{apa} sequence & \acrshort{cca} & \\
+		\citeauthor{nagel2018a}  & article & m-sequence & & Monitor raster latency,  P300, \acrshort{ssvep}, \acrshort{cvep} \\
+		\citeauthor{nagel2018b} & proceedings & optimized random sequences & \acrshort{cca}, regression & \\
+		\citeauthor{nagel2018c} & article & random and optimized sequences & Ridge regression, EEG2Code & \\
+		\citeauthor{nezamfar2018} & article & m-sequence & \acrshort{rda} & Color (green-red), \acrshort{cvep} versus eye tracker \\
+		\citeauthor{spuler2018} & article & m-sequence & \acrshort{cca},  \acrshort{svm} & \acrshort{assr} versus \acrshort{caep} \\
+		\citeauthor{turi2018} & preprint & m-sequence & & Zero-training, language model \\
+		\citeauthor{wei2018} & article & grouping modulation, Golay complementary sequences, \acrshort{apa} sequence & \acrshort{cca} & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2017} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{aminaka2017} & chapter & m-sequence & \acrshort{cca},  \acrshort{svm} & Color (green-blue), 40 Hz \\
+		\citeauthor{isaksen2017} & article & m-sequence, Gold code, Barker code & correlation & \\
+		\citeauthor{nagel2017} & proceedings & m-sequence, random codes & \acrshort{cca} & \\
+		\citeauthor{spuler2017} & article & m-sequence & \acrshort{cca} & Dry \acrshort{eeg}, static and dynamic stopping \\
+		\citeauthor{thielen2017} & chapter & modulated Gold codes & reconvolution, \acrshort{cca} & Zero-training \\
+		\citeauthor{wei2017} & article & grouping modulation, Golay sequence, \acrshort{apa} sequence & \acrshort{cca} & \\
+		\citeauthor{wittevrongel2017} & article & m-sequence & beamformer & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2016} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{desain2016} & patent & modulated Gold codes & \acrshort{cca} & \\
+		\citeauthor{isaksen2016} & proceedings & m-sequence & Barker code, Gold code & \\
+		\citeauthor{nezamfar2016} & article & m-sequence & & FlashType, color (red-green), 110 Hz, language model \\
+		\citeauthor{riechmann2016} & article & m-sequence &  \acrshort{svm} (linear) & Color (green-red, black-white), shape, background, 120 Hz, virtual agent \\
+		\citeauthor{sato2016} & proceedings & m-sequence &\acrshort{cca}, \acrshort{mlp}, Lasso regression, Linear regression & \\
+		\citeauthor{thielen2016} & proceedings & modulated Gold codes & reconvolution, \acrshort{cca} & \\
+		\citeauthor{wei2016a} & article & m-sequence & \acrshort{cca} & Stimulus characteristics: size (0.67, 1.7, 2.8, 3.8, 5.4, 7.1, 8.9 dva), color (white, red, green, blue, yellow), proximity (3.8, 4.8, 5.8, 6.8 dva), length (15, 31, 63, 127 bits), lag (2, 4, 6, 8, 10 bits) \\
+		\citeauthor{wei2016b} & article & m-sequence, Golay sequence & \acrshort{cca} & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2015} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{aminaka2015a} & proceedings & m-sequence & \acrshort{cca} & Color (green-blue, white-black), presentation rate (30, 40 Hz) \\
+		\citeauthor{aminaka2015b} & proceedings & m-sequence & \acrshort{cca},  \acrshort{svm} & Color (green-blue, white-black), presentation rate (30, 40 Hz), \acrshort{cca} versus \acrshort{svm} \\
+		\citeauthor{aminaka2015c} & proceedings & m-sequence & \acrshort{svm} & Color (green-blue, white-black), presentation rate (30, 40 Hz), pass-band optimization (6-21 Hz) \\
+		\citeauthor{aminaka2015d} & proceedings & m-sequence & \acrshort{svm} & Color (green-blue, white-black), presentation rate (30, 40 Hz),  \acrshort{svm} (linear, polynomial, rbf, sigmoid) \\
+		\citeauthor{mohebbi2015} & proceedings & Gold code & correlation & Wheelchair \\
+		\citeauthor{nezamfar2015} & proceedings & m-sequence & maximum likelihood & Color (red-green, blue-yellow, black-white), presentation rate (30, 60, 110 Hz) \\
+		\citeauthor{sato2015} & proceedings & m-sequence & correlation & Automatic repeat request  \\
+		\citeauthor{spuler2015} & proceedings & m-sequence & \acrshort{cca}, \acrshort{svm} & Windows applications \\
+		\citeauthor{thielen2015} & article & modulated Gold codes & reconvolution, \acrshort{cca} & \\
+		\citeauthor{waytowich2015} & article & m-sequence & \acrshort{cca} & Foveal versus peripheral stimulation \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2014} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{kapeller2014} & article & m-sequence & \acrshort{cca}, \acrshort{lda} & Invasive, video application \\
+		\citeauthor{tu2014} & article & & \acrshort{csp}, \acrshort{svm}, Naive Bayes, \acrshort{lda} & Color (red-green), \acrshort{ctvep} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2013} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{bohorquez2013} & proceedings & temporally jittered SSVEP & \acrshort{clad} & \\
+		\citeauthor{kapeller2013} & proceedings & m-sequence & \acrshort{cca}, \acrshort{lda} & Robot, \acrshort{ssvep} versus \acrshort{cvep} \\
+		\citeauthor{riechmann2013} & proceedings & hierarchical codebook & \acrshort{svm} & Color (red-green, black-white) \\
+		\citeauthor{spuler2013a} & proceedings & m-sequence & \acrshort{ocsvm}, & Unsupervised online calibration \\
+		\citeauthor{spuler2013b} & proceedings & m-sequence & \acrshort{ocsvm} &  Unsupervised online calibration \\
+		\citeauthor{spuler2013c} & article & m-sequence & \acrshort{cca}, \acrshort{ocsvm} & \acrshort{cvep}, \acrshort{ern}, P300, \acrshort{tmsep}, \acrshort{ccep} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2012} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{nakanishi2012} & proceedings & m-sequence, periodic codes & periodicity detection & \\
+		\citeauthor{spuler2012a} & proceedings & m-sequence & \acrshort{cca}, \acrshort{ocsvm} & \\
+		\citeauthor{spuler2012b} & article & m-sequence & \acrshort{cca}, \acrshort{ocsvm} & Online unsupervised adaptation with \acrshort{ern} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2011} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{bin2011} & article & m-sequence & \acrshort{cca} & \\
+		\citeauthor{lai2011} & article & & & Color (red-green), \acrshort{ctvep} \\
+		\citeauthor{nezamfar2011a} & article & m-sequence & template matching, Bayesian fusion & \\
+		\citeauthor{nezamfar2011b} & proceedings & m-sequence & correlation, naive Bayes & Presentation rate (15, 30 Hz) \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2009} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{bin2009} & article & m-sequence & correlation & \acrshort{erp} versus \acrshort{ssvep} versus \acrshort{cvep} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2008} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{desain2008} & proceedings & Gold codes & reconvolution & Auditory \\
+		\citeauthor{farquhar2008} & proceedings & Gold codes & & Auditory \\
+		\citeauthor{momose2008} & proceedings & m-sequence & & Hybrid P300 and \acrshort{cvep} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2007} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{momose2007}  & proceedings & m-sequence & & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2006} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{bohorquez2006}  & article & m-sequence & \acrshort{clad} & Auditory \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{2002} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{hanagata2002} & proceedings & & & \\
+		\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{1992} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{sutter1992} & article & m-sequence & correlation & Invasive, \acrshort{als} patient \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+		\textbf{1984} & & & & \\
+		\toprule
+		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
+		\midrule
+		\citeauthor{sutter1984} & proceedings & & & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\clearpage
+\bibliographystyle{apacite}
+\bibliography{cvep-literature.bib}
+
+\clearpage
+\printglossary
+	
+\end{document}
