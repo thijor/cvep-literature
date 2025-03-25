@@ -51,7 +51,7 @@
 \newacronym{lda}{LDA}{linear discriminant analysis}
 \newacronym{lstm}{LSTM}{long short term memory}
 \newacronym{mlp}{MLP}{multilayer perceptron}
-\newacronym{nrbs}{NRBS}{narrow-band random sequences}
+\newacronym{nbrs}{NBRS}{narrow-band random sequences}
 \newacronym{ocsvm}{OCSVM}{one class support vector machine}
 \newacronym{pac}{PAC}{phase to amplitude coupling}
 \newacronym{pca}{PCA}{principal component analysis}
@@ -82,8 +82,9 @@
 		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\ 
 		\midrule
 		\citeauthor{dold2025} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Dareplane, experiment platform \\
+		\citeauthor{dong2025} & article & \acrshort{nbrs} & EEG2Code & 240 classes \\
 		\citeauthor{martinez2025a} & article &  &  & Editorial \acrshort{cvep} \\
-		\citeauthor{martinez2025b} & proceedings &  &  & Asynchronous \\
+		\citeauthor{martinez2025b} & proceedings &  m-sequence & \acrshort{cca} & Asynchronous, early stopping \\
 		\citeauthor{santamaria2025} & proceedings & & & Calibration-free, deep learning \\
 		\bottomrule
 	\end{tabular}
@@ -100,6 +101,7 @@
 		\citeauthor{castillos2024dataset} & dataset & burst codes & & Grating stimuli \\
 		\citeauthor{dehais2024} & article & burst codes & Riemannian, logistic regression & Grating stimuli, dry \acrshort{eeg}, comfort, eyestrain \\
 		\citeauthor{fodor2024} & article & m-sequence & \acrshort{cca} & Classification certainty feedback \\
+		\citeauthor{huang2024} & article & white noise & \acrshort{trca} & Visual tracking \\
 		\citeauthor{lai2024} & proceedings & \acrshort{dibs} & \acrfull{fbtrca}, \acrshort{lstm} & Asynchronous \\
 		\citeauthor{martinez2024} & proceedings & non-binary m-sequence & \acrshort{cca} & Learning curve \\
 		\citeauthor{miao2024a} & article & white noise & \acrshort{tdca}, linear modeling, transfer learning & Minimal calibration, subject-to-subject transfer \\
@@ -112,8 +114,8 @@
 		\citeauthor{thielen2024} & proceeding & modulated Gold codes & reconvolution, \acrshort{cca}, \acrshort{umm} & Calibration-free \\
 		\citeauthor{thielen2024dataset} & dataset & modulated Gold codes & & \\
 		\citeauthor{velut2024} & proceedings & burst codes & \acrshort{cnn}, SPDNet, transfer learning & Subject-to-subject transfer \\
-		\citeauthor{zheng2024a} & article & \acrshort{nrbs} & \acrshort{fbcca} & Calibration-free, \acrshort{cvep} versus \acrshort{ssvep} \\
-		\citeauthor{zheng2024b} & dataset & \acrshort{nrbs} & & \acrshort{cvep} versus \acrshort{ssvep} \\
+		\citeauthor{zheng2024a} & article & \acrshort{nbrs} & \acrshort{fbcca} & Calibration-free, \acrshort{cvep} versus \acrshort{ssvep} \\
+		\citeauthor{zheng2024b} & dataset & \acrshort{nbrs} & & \acrshort{cvep} versus \acrshort{ssvep} \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -130,8 +132,7 @@
 		\citeauthor{darmet2023} & proceedings & m-sequence & \acrshort{trca}, EEG2Code, \acrshort{cnn} & \\
 		\citeauthor{fernandez2023} & article & m-sequence & \acrshort{cca} & Eyestrain spatial frequency \\
 		\citeauthor{henke2023} & proceedings & m-sequence & \acrshort{cca} & Background music \\
-		\citeauthor{huang2023a} & preprint & white noise & \acrshort{trca} & Visual tracking \\
-		\citeauthor{huang2023b} & article & m-sequence & Combined EEGNet & Biometrics \\
+		\citeauthor{huang2023} & article & m-sequence & Combined EEGNet & Biometrics \\
 		\citeauthor{lai2023} & proceedings & \acrshort{dibs} & \acrshort{fbtrca}, \acrshort{lstm} & fatigue \\
 		\citeauthor{martinez2023a} & article & m-sequence, non-binary m-sequences & \acrshort{cca} & Eyestrain, fatigue \\
 		\citeauthor{martinez2023b} & proceedings & non-binary m-sequence & \acrshort{cca} & Dynamic stopping \\
