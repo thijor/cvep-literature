@@ -42,6 +42,7 @@
 \newacronym{csep}{c-SEP}{code-modulated somatosensory evoked potential}
 \newacronym{cvep}{c-VEP}{code-modulated visual evoked potential}
 \newacronym{dibs}{DIBS}{discrete interval binary sequence}
+\newacronym{ecg}{ECG}{electrocardiography}
 \newacronym{eeg}{EEG}{electroencephalography}
 \newacronym{ern}{ERN}{error related negativity}
 \newacronym{erp}{ERP}{event related potential}
@@ -57,6 +58,7 @@
 \newacronym{pca}{PCA}{principal component analysis}
 \newacronym{qssvep}{QSSVEP}{quasi steady-state visual evoked potential}
 \newacronym{rda}{RDA}{regularized discriminant analysis}
+\newacronym{sart}{SART}{sustained attention to response task}
 \newacronym{seeg}{sEEG}{stereoelectroencephalography}
 \newacronym{slda}{sLDA}{shrinkage linear discriminant analysis}
 \newacronym{sop}{SOP}{superposition optimized pulse}
@@ -84,15 +86,17 @@
 		\midrule
 		\citeauthor{dold2025} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Dareplane, experiment platform \\
 		\citeauthor{dong2025} & article & \acrshort{nbrs} & EEG2Code & 240 classes \\
-		\citeauthor{fodor2025} & proceedings & m-sequence & \acrshort{cca} & class augmentation \\
+		\citeauthor{fodor2025a} & proceedings & m-sequence & \acrshort{cca} & class augmentation \\
+		\citeauthor{fodor2025a} & article & m-sequence & \acrshort{cca} & number of electrodes, montage \\
+		\citeauthor{guyonnet2025} & article & Gold code & \acrshort{cca} & auditory hearing diagnostics \\
 		\citeauthor{le2025} & proceedings & m-sequence & \acrshort{cca} & authentication \\
 		\citeauthor{martinfernandez2025} & article & m-sequence & \acrshort{cca} & stimulus opacity \\
 		\citeauthor{martinezcagigal2025a} & article &  &  & Editorial \acrshort{cvep} \\
-		\citeauthor{martinezcagigal2025b} & proceedings &  m-sequence & \acrshort{cca} & Asynchronous, early stopping \\
-		\citeauthor{santamaria2025} & proceedings & & & Calibration-free, deep learning \\
-		\citeauthor{thielen2025a} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Implanted, invasive, \acrshort{seeg} \\
+		\citeauthor{martinezcagigal2025b} & proceedings &  m-sequence & \acrshort{cca} & asynchronous, early stopping \\
+		\citeauthor{santamaria2025} & proceedings & & & calibration-free, deep learning \\
+		\citeauthor{thielen2025a} & article & modulated Gold codes & reconvolution, \acrshort{cca} & implanted, invasive, \acrshort{seeg} \\
 		\citeauthor{thielen2025b} & article & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & reconvolution, \acrshort{cca} & BCI inefficiency, performance predictors, binary stimulus sequences \\
-		\citeauthor{thielen2025dataset} & dataset & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & & Binary stimulus sequences, EEG, ECG, SART, resting-state \\
+		\citeauthor{thielen2025dataset} & dataset & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & & binary stimulus sequences, \acrshort{eeg}, \acrshort{ecg}, \acrshort{sart}, resting-state \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -104,24 +108,24 @@
 		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\ 
 		\midrule
 		\citeauthor{ahmadi2024} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Bayesian dynamic stopping \\
-		\citeauthor{canturk2024} & proceedings & m-sequence & \acrshort{cca} & Language model (ChatGPT) \\
-		\citeauthor{castillos2024dataset} & dataset & burst codes & & Grating stimuli \\
-		\citeauthor{dehais2024} & article & burst codes & Riemannian, logistic regression & Grating stimuli, dry \acrshort{eeg}, comfort, eyestrain \\
-		\citeauthor{fodor2024} & article & m-sequence & \acrshort{cca} & Classification certainty feedback \\
-		\citeauthor{huang2024} & article & white noise & \acrshort{trca} & Visual tracking \\
-		\citeauthor{lai2024} & proceedings & \acrshort{dibs} & \acrfull{fbtrca}, \acrshort{lstm} & Asynchronous \\
-		\citeauthor{martinezcagigal2024} & proceedings & non-binary m-sequence & \acrshort{cca} & Learning curve \\
-		\citeauthor{miao2024a} & article & white noise & \acrshort{tdca}, linear modeling, transfer learning & Minimal calibration, subject-to-subject transfer \\
-		\citeauthor{miao2024b} & proceedings & m-sequence & EEG2Code, EEGNet, ShallowConvNet, DeepConvNet, ShallowNet & Deep learning, transfer-learning, gine-tuning \\
-		\citeauthor{narayanan2024} & proceedings & modulated Gold codes & \acrshort{cca} & Gaze-independent, covert attention \\
-		\citeauthor{qu2024} & article & m-sequence & \acrshort{cca} & Biometrics \\
-		\citeauthor{scheppink2024} & proceedings & modulated Gold codes & \acrshort{cca} & Auditory, \acrshort{caep} \\
-		\citeauthor{shi2024} & article & white-noise & \acrshort{tdca} & Maximum information rate \\
-		\citeauthor{sun2024} & article & m-sequence & \acrshort{tdca} & Small stimuli (0.5, 1, 2, 3 visual degrees) \\
-		\citeauthor{thielen2024} & proceeding & modulated Gold codes & reconvolution, \acrshort{cca}, \acrshort{umm} & Calibration-free \\
+		\citeauthor{canturk2024} & proceedings & m-sequence & \acrshort{cca} & language model (ChatGPT) \\
+		\citeauthor{castillos2024dataset} & dataset & burst codes & & grating stimuli \\
+		\citeauthor{dehais2024} & article & burst codes & Riemannian, logistic regression & grating stimuli, dry \acrshort{eeg}, comfort, eyestrain \\
+		\citeauthor{fodor2024} & article & m-sequence & \acrshort{cca} & classification certainty feedback \\
+		\citeauthor{huang2024} & article & white noise & \acrshort{trca} & visual tracking \\
+		\citeauthor{lai2024} & proceedings & \acrshort{dibs} & \acrfull{fbtrca}, \acrshort{lstm} & asynchronous \\
+		\citeauthor{martinezcagigal2024} & proceedings & non-binary m-sequence & \acrshort{cca} & learning curve \\
+		\citeauthor{miao2024a} & article & white noise & \acrshort{tdca}, linear modeling, transfer learning & minimal calibration, subject-to-subject transfer \\
+		\citeauthor{miao2024b} & proceedings & m-sequence & EEG2Code, EEGNet, ShallowConvNet, DeepConvNet, ShallowNet & deep learning, transfer-learning, fine-tuning \\
+		\citeauthor{narayanan2024} & proceedings & modulated Gold codes & \acrshort{cca} & gaze-independent, covert attention \\
+		\citeauthor{qu2024} & article & m-sequence & \acrshort{cca} & biometrics \\
+		\citeauthor{scheppink2024} & proceedings & modulated Gold codes & \acrshort{cca} & auditory, \acrshort{caep} \\
+		\citeauthor{shi2024} & article & white-noise & \acrshort{tdca} & maximum information rate \\
+		\citeauthor{sun2024} & article & m-sequence & \acrshort{tdca} & small stimuli (0.5, 1, 2, 3 visual degrees) \\
+		\citeauthor{thielen2024} & proceeding & modulated Gold codes & reconvolution, \acrshort{cca}, \acrshort{umm} & calibration-free \\
 		\citeauthor{thielen2024dataset} & dataset & modulated Gold codes & & \\
-		\citeauthor{velut2024} & proceedings & burst codes & \acrshort{cnn}, SPDNet, transfer learning & Subject-to-subject transfer \\
-		\citeauthor{zheng2024a} & article & \acrshort{nbrs} & \acrshort{fbcca} & Calibration-free, \acrshort{cvep} versus \acrshort{ssvep} \\
+		\citeauthor{velut2024} & proceedings & burst codes & \acrshort{cnn}, SPDNet, transfer learning & subject-to-subject transfer \\
+		\citeauthor{zheng2024a} & article & \acrshort{nbrs} & \acrshort{fbcca} & calibration-free, \acrshort{cvep} versus \acrshort{ssvep} \\
 		\citeauthor{zheng2024b} & dataset & \acrshort{nbrs} & & \acrshort{cvep} versus \acrshort{ssvep} \\
 		\bottomrule
 	\end{tabular}
@@ -215,7 +219,8 @@
 		\midrule
 		\citeauthor{ahmadi2019dataset1} & dataset & modulated Gold codes & & \\
 		\citeauthor{ahmadi2019dataset2} & dataset & modulated Gold codes & & \\
-		\citeauthor{ahmadi2019} & article & modulated Gold codes & \acrshort{cca} & Low channel count \\
+		\citeauthor{ahmadi2019a} & proceedings & modulated Gold codes & \acrshort{cca} & Number of electrodes, montage \\
+		\citeauthor{ahmadi2019b} & article & modulated Gold codes & \acrshort{cca} & Number of electrodes, montage \\
 		\citeauthor{basaklar2019} & article & m-sequence & \acrshort{cca} & Presentation rate (60, 120, 240 Hz) \\
 		\citeauthor{borhanazad2019} & proceedings & modulated Gold codes & \acrshort{cca} & Presentation rate (40, 60, 90, 120 Hz) \\
 		\citeauthor{desain2019} & patent & modulated Gold codes & \acrshort{cca} & \\
