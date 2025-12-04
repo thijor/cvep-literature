@@ -5,6 +5,7 @@
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{palatino}
+\usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage{float}
@@ -78,32 +79,38 @@
 
 \begin{document}
 	
-\begin{table}[H]
-	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
-		\textbf{2025} & & & & \\ 
-		\toprule
-		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\ 
-		\midrule
-		\citeauthor{dold2025} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Dareplane, experiment platform \\
-		\citeauthor{dong2025} & article & \acrshort{nbrs} & EEG2Code & 240 classes \\
-		\citeauthor{fodor2025a} & proceedings & m-sequence & \acrshort{cca} & class augmentation \\
-		\citeauthor{fodor2025a} & article & m-sequence & \acrshort{cca} & number of electrodes, montage \\
-		\citeauthor{guyonnet2025} & article & Gold code & \acrshort{cca} & auditory hearing diagnostics \\
-		\citeauthor{le2025} & proceedings & m-sequence & \acrshort{cca} & authentication \\
-		\citeauthor{martinfernandez2025} & article & m-sequence & \acrshort{cca} & stimulus opacity \\
-		\citeauthor{martinezcagigal2025a} & article &  &  & Editorial \acrshort{cvep} \\
-		\citeauthor{martinezcagigal2025b} & proceedings &  m-sequence & \acrshort{cca} & asynchronous, early stopping \\
-		\citeauthor{moreno2025} & article & m-sequence & \acrshort{cca} & mixed reality versus screen \\
-		\citeauthor{santamaria2025} & proceedings & & & calibration-free, deep learning \\
-		\citeauthor{tangermann2025} & article & & & review learning from small datasets \\
-		\citeauthor{thielen2025a} & article & modulated Gold codes & reconvolution, \acrshort{cca} & implanted, invasive, \acrshort{seeg} \\
-		\citeauthor{thielen2025b} & article & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & reconvolution, \acrshort{cca} & BCI inefficiency, performance predictors, binary stimulus sequences \\
-		\citeauthor{thielen2025dataset} & dataset & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & & binary stimulus sequences, \acrshort{eeg}, \acrshort{ecg}, \acrshort{sart}, resting-state \\
-		\citeauthor{yu2025} & article & Gold code & DBFENet, EEGNet, etc. & Robot arm, scene segmentation, deep learning \\
-		\citeauthor{zheng2025} & preprint & \acrshort{nbrs} & \acrshort{fbcca} & calibration-free, 504 targets \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+\begin{longtable}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}[H]
+	\textbf{2025} & & & & \\ 
+	\toprule
+	\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\ 
+	\midrule
+	\citeauthor{dold2025} & article & modulated Gold codes & reconvolution, \acrshort{cca} & Dareplane, experiment platform \\
+	\citeauthor{dong2025} & article & \acrshort{nbrs} & EEG2Code & 240 classes \\
+	\citeauthor{fodor2025a} & proceedings & m-sequence & \acrshort{cca} & class augmentation \\
+	\citeauthor{fodor2025b} & article & m-sequence & \acrshort{cca} & number of electrodes, montage \\
+	\citeauthor{fodor2025c} & proceedings & m-sequence & GAT-CNN & Deep learning, multi-head attention and graph neural net, electrode importance \\
+	\citeauthor{gomel2025} & proceedings & burst codes & xDAWN and Riemannian & dry EEG, invisible stimuli \\
+	\citeauthor{guyonnet2025} & article & Gold code & \acrshort{cca} & auditory hearing diagnostics \\
+	\citeauthor{kiser2025} & proceedings & m-sequence & \acrshort{cca} & authentication \\
+	\citeauthor{le2025} & proceedings & m-sequence & \acrshort{cca} & authentication \\
+	\citeauthor{martinfernandez2025a} & article & m-sequence & \acrshort{cca} & stimulus opacity \\
+	\citeauthor{martinfernandez2025b} & proceedings & m-sequence & \acrshort{cca} & realistic background and opacity \\
+	\citeauthor{martinezcagigal2025a} & article &  &  & Editorial \acrshort{cvep} \\
+	\citeauthor{martinezcagigal2025b} & proceedings &  m-sequence & \acrshort{cca} & asynchronous, early stopping \\
+	\citeauthor{martinezcagigal2025c} & article & binary and non-binary m-sequence & \acrshort{cca} & binary and non-binary codes, spatial frequency, calibration time, comfort \\
+	\citeauthor{morenocalderon2025a} & article & m-sequence & \acrshort{cca} & mixed reality versus screen \\
+	\citeauthor{morenocalderon2025b} & proceedings & m-sequence & \acrshort{cca} & mixed reality versus screen \\
+	\citeauthor{nair2025} & preprint & m-sequence & \acrshort{cca}, Bayesian \acrshort{lda}, \acrshort{cnn} & deep learning, siamese network \\
+	\citeauthor{santamaria2025} & proceedings & & & calibration-free, deep learning \\
+	\citeauthor{scheppink2025} & proceedings & m-sequence & \acrshort{cca} & scene/object based stimulation \\
+	\citeauthor{tangermann2025} & article & & & review learning from small datasets \\
+	\citeauthor{thielen2025a} & article & modulated Gold codes & reconvolution, \acrshort{cca} & implanted, invasive, \acrshort{seeg} \\
+	\citeauthor{thielen2025b} & article & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & reconvolution, \acrshort{cca} & BCI inefficiency, performance predictors, binary stimulus sequences \\
+	\citeauthor{thielen2025dataset} & dataset & m-sequence, de Bruijn sequence, Golay sequence, Gold sequence, Gold code set, modulated & & binary stimulus sequences, \acrshort{eeg}, \acrshort{ecg}, \acrshort{sart}, resting-state \\
+	\citeauthor{yu2025} & article & Gold code & DBFENet, EEGNet, etc. & Robot arm, scene segmentation, deep learning \\
+	\citeauthor{zheng2025} & preprint & \acrshort{nbrs} & \acrshort{fbcca} & calibration-free, 504 targets \\
+	\bottomrule
+\end{longtable}
 	
 \begin{table}[H]
 	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
@@ -136,7 +143,7 @@
 \end{table}
 
 \begin{table}[H]
-	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}}
+	\begin{tabular}{p{5cm}p{2cm}p{5cm}p{5cm}p{6.5cm}} 
 		\textbf{2023} & & & & \\ 
 		\toprule
 		\textbf{Author(s)} & \textbf{Type} & \textbf{Stimulus} & \textbf{Decoding} & \textbf{Notes} \\
@@ -151,7 +158,7 @@
 		\citeauthor{lai2023} & proceedings & \acrshort{dibs} & \acrshort{fbtrca}, \acrshort{lstm} & fatigue \\
 		\citeauthor{martinezcagigal2023a} & article & m-sequence, non-binary m-sequences & \acrshort{cca} & Eyestrain, fatigue \\
 		\citeauthor{martinezcagigal2023b} & proceedings & non-binary m-sequence & \acrshort{cca} & Dynamic stopping \\
-		\citeauthor{moreno2023} & article & m-sequence & \acrshort{cca} & Games \\
+		\citeauthor{morenocalderon2023} & article & m-sequence & \acrshort{cca} & Games \\
 		\citeauthor{santamaria2023} & proceedings & non-binary m-sequence, & EEG-inception & \\
 		\citeauthor{thielen2023a} & proceedings & m-sequence, \acrshort{apa} sequence, Gold codes, Golay sequence, de Bruijn sequence & reconvolution, \acrshort{cca} & Simulated \acrshort{eeg} \\
 		\citeauthor{thielen2023b} & proceedings & m-sequence, Gold codes, Golay sequence, de Bruijn sequence, modulated codes & reconvolution, \acrshort{cca} & Empirical \acrshort{eeg} \\
